@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
   final Color? color;
+  final Text? text;
   final void Function()? onTap;
   const MyButton({
     super.key,
     this.color,
     this.onTap,
+    this.text,
   });
 
   @override
@@ -16,11 +18,11 @@ class MyButton extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           color: color,
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(100),
         ),
-        padding: const EdgeInsets.all(25),
-        child: const Center(
-          child: Text("TAP"),
+        padding: const EdgeInsets.all(17),
+        child: Center(
+          child: text ?? Text("TAP"),
         ),
       ),
     );
